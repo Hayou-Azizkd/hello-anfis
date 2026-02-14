@@ -1,0 +1,9 @@
+setup.py
+hello_anfis.egg-info/PKG-INFO
+hello_anfis.egg-info/SOURCES.txt
+hello_anfis.egg-info/dependency_links.txt
+hello_anfis.egg-info/top_level.txt
+src/__init__.py
+src/main.py
+tests/__init__.py
+tests/test_main.py
