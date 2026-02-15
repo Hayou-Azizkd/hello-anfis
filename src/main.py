@@ -6,4 +6,6 @@ def say_hello(name: str) -> str:
     """
     if not name:
         return "Hello, World!"
+    if name.strip() == "":
+        return "Hello, Stranger!"
     return f"Hello, {name}!"
