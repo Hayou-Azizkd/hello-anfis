@@ -29,13 +29,6 @@ jobs:
         with:
           name: coverage-report
           path: coverage.xml
-      - name: Fail job if coverage threshold not met
-        run: |
-          if [ ${{ job.status }} == 'failure' ]; then
-            echo "COVERAGE-ERROR: Tests failed due to coverage threshold not being met"
-            exit 1
-          fi
-        if: always()
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
