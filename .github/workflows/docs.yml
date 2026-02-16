@@ -1,0 +1,52 @@
+name: CI Documentation Sphinx
+
+# Déclencheurs : lors d'un push sur develop ou lors d'une PR vers develop
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+  # Permet de lancer manuellement le workflow depuis l'onglet Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          # Installation de Sphinx et du thème ReadTheDocs
+          pip install sphinx sphinx-rtd-theme nbsphinx
+          # Installation du projet en mode éditable pour que Sphinx trouve 'src'
+          pip install -e .
+          # Installation des dépendances du projet ANFIS (si le fichier existe)
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Générer la documentation HTML
+        run: |
+          # On se déplace dans le dossier docs et on lance le Makefile
+          cd docs
+          make html
+
+      - name: Publier sur GitHub Pages
+        # On ne publie que si le push est sur develop (pas pour les PR)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build/html
+          # Force la création de la branche gh-pages si elle n'existe pas
+          force_orphan: true
