@@ -1,3 +1,6 @@
+from unicodedata import name
+
+
 def say_hello(name: str) -> str:
     """
     Génère un message de bienvenue.
