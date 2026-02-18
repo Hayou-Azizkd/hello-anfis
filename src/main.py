@@ -1,3 +1,6 @@
+from unicodedata import name
+
+
 def say_hello(name: str) -> str:
     """
     Génère un message de bienvenue.
@@ -14,4 +17,8 @@ def say_hello(name: str) -> str:
         return "Hello, Mysterious User!"
     if name.lower() in ["admin", "root", "superuser"]:
         return "Hello, Esteemed Administrator!"
-    return f"Hello, {name}!"
+    if name.lower() in ["john", "jane", "doe"]:
+        return f"Hello, {name.capitalize()}!"
+    if name.lower() in ["alice", "bob", "charlie"]:
+        return f"Hello, {name.capitalize()}!"
+    return f"Hello, {name}!"    
