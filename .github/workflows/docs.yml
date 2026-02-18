@@ -43,7 +43,7 @@ jobs:
 
       - name: Publier sur GitHub Pages
         # On ne publie que si le push est sur develop (pas pour les PR)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/develop')
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
