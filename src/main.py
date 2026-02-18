@@ -14,4 +14,8 @@ def say_hello(name: str) -> str:
         return "Hello, Mysterious User!"
     if name.lower() in ["admin", "root", "superuser"]:
         return "Hello, Esteemed Administrator!"
+    if name.lower() in ["alice", "bob", "charlie"]:
+        return f"Hello, {name.capitalize()}!"
+    if name.lower() in ["john", "jane", "doe"]:
+        return f"Hello, {name.capitalize()}!"
     return f"Hello, {name}!"
