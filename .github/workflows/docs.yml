@@ -28,12 +28,10 @@ jobs:
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
-          # Installation de Sphinx et du thème ReadTheDocs
-          pip install sphinx sphinx-rtd-theme nbsphinx
+          # Installation de dependances communes (Sphinx, extensions, etc.)
+          pip install -r requirements.txt
           # Installation du projet en mode éditable pour que Sphinx trouve 'src'
           pip install -e .
-          # Installation des dépendances du projet ANFIS (si le fichier existe)
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Générer la documentation HTML
         run: |
