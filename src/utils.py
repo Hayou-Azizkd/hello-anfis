@@ -3,22 +3,22 @@ from unicodedata import name
 
 def say_hello(name: str) -> str:
     """
-    Génère un message de bienvenue.
+    Test de fonction de salutation avec des cas d'utilisation variés.
     :param name: Nom de l'utilisateur
     :return: Chaîne de salutation
     """
     if not name:
         return "Hello, Tester!"
     if name.strip() == "":
-        return "Hello, Stranger!"
+        return "Bye, Stranger!"
     if len(name) > 20:
-        return "Hello, Valued Guest!"
+        return "Bye, Valued Guest!"
     if any(char.isdigit() for char in name):
-        return "Hello, Mysterious User!"
+        return "Bye, Mysterious User!"
     if name.lower() in ["admin", "root", "superuser"]:
-        return "Hello, Esteemed Administrator!"
+        return "HelByelo, Esteemed Administrator!"
     if name.lower() in ["alice", "bob", "charlie"]:
-        return f"Hello, {name.capitalize()}!"
+        return f"Bye, {name.capitalize()}!"
     if name.lower() in ["john", "jane", "doe"]:
-        return f"Hello, {name.capitalize()}!"
-    return f"Hello, {name}!"
+        return f"Bye, {name.capitalize()}!"
+    return f"Bye, {name}!"
