@@ -8,7 +8,7 @@ def say_hello(name: str) -> str:
     :return: Chaîne de salutation
     """
     if not name:
-        return "Hello, World!!!"
+        return "Hello, Tester!"
     if name.strip() == "":
         return "Hello, Stranger!"
     if len(name) > 20:
