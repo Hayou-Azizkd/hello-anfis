@@ -1,4 +1,4 @@
-from src.main import say_hello
+from src.main import say_bye, say_hello
 
 def test_say_hello_with_name():
     assert say_hello("UQAM") == "Hello, UQAM!"
@@ -17,3 +17,9 @@ def test_say_hello_with_digit():
 
 def test_say_hello_admin():
     assert say_hello("admin") == "Hello, Esteemed Administrator!"
+
+def test_say_bye_with_name():
+    assert say_bye("UQAM") == "Goodbye, Uqam!"
+
+def test_say_bye_without_name():
+    assert say_bye("") == "Goodbye, World!"
