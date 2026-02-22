@@ -67,8 +67,8 @@ jobs:
   build-docs:
     name: Build and Deploy Documentation
     runs-on: ubuntu-latest
-    needs: [run-tests, sonarqube]
-    if: always() && needs.run-tests.result == 'success'
+    needs: run-tests
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
