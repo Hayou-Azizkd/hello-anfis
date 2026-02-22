@@ -1,0 +1,41 @@
+.venv/
+venv/
+__pycache__/
+tests/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Documentation Sphinx (sortie de build)
+docs/build/
+docs/_build/
+
+# Fichiers d'environnement locaux
+.env
+.env.local
+.env.*.local
+
+# Editeurs
+*.swp
+*.swo
+*~
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+.venv/pyvenv.cfg
