@@ -22,3 +22,13 @@ def say_hello(name: str) -> str:
     if name.lower() in ["john", "jane", "doe"]:
         return f"Hello, {name.capitalize()}!"
     return f"Hello, {name}!"
+
+def say_bye(name: str) -> str:
+    """
+    Génère un message d'au revoir.
+    :param name: Nom de l'utilisateur
+    :return: Chaîne d'au revoir
+    """
+    if not name:
+        return "Goodbye, World!"
+    return f"Goodbye, {name.capitalize()}!"
