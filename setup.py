@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="hello-anfis",
-    version="1.1.0",
+    version="1.1.1",
     description="Demonstration project for MGL7760 - Software Quality and Productivity",
     author="Abdoul Aziz A. Hayou, Tsobgny Marc Aurelien, Balde Abdoulaye",
     author_email="",
