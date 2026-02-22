@@ -76,8 +76,8 @@ Les images Docker sont construites et publiees automatiquement sur **GitHub Cont
 **Tirez une image :**
 
 ```bash
-# Version publiee (ex: v1.2.3)
-docker pull ghcr.io/hayou-azizkd/hello-anfis:1.2.3
+# Version publiee (ex: v1.0.0)
+docker pull ghcr.io/hayou-azizkd/hello-anfis:1.0.0
 
 # Branche develop
 docker pull ghcr.io/hayou-azizkd/hello-anfis:develop
