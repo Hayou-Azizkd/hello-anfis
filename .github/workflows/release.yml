@@ -56,8 +56,8 @@ jobs:
       - name: Generate release notes
         id: release_notes
         run: |
-          VERSION=${{ steps.get_version.outputs.VERSION }}
-          BODY="## Release $VERSION\n\n"
+          VERSION="${{ steps.get_version.outputs.VERSION }}"
+          BODY="## Release ${VERSION}\n\n"
           BODY+="### What's New\n"
           BODY+="- Automated testing and documentation generation\n"
           BODY+="- SonarQube code quality analysis\n"
